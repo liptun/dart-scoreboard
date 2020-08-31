@@ -4,7 +4,6 @@ import PlayerListItem from './PlayerListItem'
 import '../styles/player-list.scss'
 
 const PlayerList = (props) => {
-    console.log(props.readonly)
     return (
         <div className="player-list">
             <div className="player-list__title">

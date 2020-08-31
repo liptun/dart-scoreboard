@@ -1,7 +1,6 @@
 const playersReducerDefaultState = []
 
 export default (state = playersReducerDefaultState, action) => {
-    console.log('Player reducer call', action)
     switch (action.type) {
 
         case 'ADD_PLAYER':

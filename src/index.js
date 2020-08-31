@@ -14,8 +14,6 @@ store.dispatch(addPlayer({name: 'LiptuN'}))
 store.dispatch(addPlayer())
 store.dispatch(addPlayer({name: 'Zivcio'}))
 
-console.log('store', store.getState())
-
 const jsx = (
   <Provider store={store}>
     <Router />
