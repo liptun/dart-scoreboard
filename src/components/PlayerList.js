@@ -7,9 +7,9 @@ const PlayerList = (props) => {
     return (
         <div className="player-list">
             <div className="player-list__title">
-                <p>Players ({props.playerList.length})</p>
+                <p>Players ({props.game.players.length})</p>
             </div>
-            {props.playerList.map( player => (
+            {props.game.players.map( player => (
                 <PlayerListItem readonly={props.readonly} key={player.id} player={player}/>
             ) )}
         </div>
@@ -20,6 +20,6 @@ PlayerList.defaultProps = {
 }
 
 const mapStateToProps = (state) => ({
-    playerList: state.playerList
+    game: state.game
 })
 export default connect(mapStateToProps)(PlayerList)

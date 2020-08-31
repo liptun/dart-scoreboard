@@ -1,3 +1,5 @@
+import { v4 as uuid } from 'uuid'
+
 export const setGameType = ({gameType = 301}) => ({
     type: 'SET_GAME_TYPE',
     gameType
@@ -9,4 +11,21 @@ export const startGame = () => ({
 
 export const endGame = () => ({
     type: 'END_GAME'
+})
+
+export const addPlayer = ({
+    name = 'Annonymous',
+    score = [21,37]
+} = {}) => ({
+    type: 'ADD_PLAYER',
+    player: {
+        id: uuid(),
+        name,
+        score
+    }
+})
+
+export const removePlayer = ({id}) => ({
+    type: 'REMOVE_PLAYER',
+    id
 })

@@ -20,7 +20,7 @@ const NewGamePage = (props) => {
             <PlayerList />
             <PlayerForm />
             <button
-                disabled={!props.playerList.length}
+                //disabled={!props.game.players.length}
                 className="button-start-game"
                 onClick={() => startNewGame()}
             >Start game</button>
@@ -30,7 +30,7 @@ const NewGamePage = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    playerList: state.playerList
+    game: state.game
 })
 
 export default connect(mapStateToProps)(NewGamePage)

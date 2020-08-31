@@ -24,7 +24,6 @@ const EnterScore = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    playerList: state.playerList,
     game: state.game
 })
 export default connect(mapStateToProps)(EnterScore)

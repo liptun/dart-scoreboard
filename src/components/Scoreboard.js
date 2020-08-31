@@ -8,7 +8,7 @@ import '../styles/scoreboard.scss'
 const Scoreboard = (props) => {
     return (
         <div className="scoreboard">
-            {props.playerList.map(player => (
+            {props.game.players.map(player => (
                 <ScoreboardPlayer key={player.id} player={player} />
             ))}
         </div>
@@ -17,7 +17,7 @@ const Scoreboard = (props) => {
 
 
 const mapStateToProps = (state) => ({
-    playerList: state.playerList
+    game: state.game
 })
 
 export default connect(mapStateToProps)(Scoreboard)

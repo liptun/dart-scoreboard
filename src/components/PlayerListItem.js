@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { removePlayer } from '../actions/player'
+import { removePlayer } from '../actions/game'
 
 const PlayerListItem = (props) => {
 
