@@ -1,5 +1,10 @@
 import { v4 as uuid } from 'uuid'
 
+export const enterScore = ({score = ''}) => ({
+    type: 'ENTER_SCORE',
+    score
+})
+
 export const setGameType = ({gameType = 301}) => ({
     type: 'SET_GAME_TYPE',
     gameType
@@ -15,7 +20,7 @@ export const endGame = () => ({
 
 export const addPlayer = ({
     name = 'Annonymous',
-    score = [21,37]
+    score = []
 } = {}) => ({
     type: 'ADD_PLAYER',
     player: {

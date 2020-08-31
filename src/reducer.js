@@ -1,6 +1,8 @@
+import dartHit from './libs/dartHit'
+
 const gameReducerDefaultState = {
     gameType: 301,
-    gameEnded: true,
+    gameRunning: false,
     currentPlayer: undefined,
     players: []
 }
@@ -26,6 +28,36 @@ export default (state = gameReducerDefaultState, action) => {
             return {
                 ...state,
                 gameType: action.gameType
+            }
+
+        case 'START_GAME':
+            return {
+                ...state,
+                currentPlayer: state.players[0].id,
+                gameRunning: true
+            }
+
+        case 'END_GAME':
+            return {
+                ...state,
+                gameRunning: false
+            }
+
+        case 'ENTER_SCORE':
+            return {
+                ...state,
+                players: state.players.map(player => {
+                    if ( state.currentPlayer === player.id ) {
+                        return {
+                            ...player,
+                            score: [
+                                ...player.score,
+                                dartHit(action.score)
+                            ]
+                        }
+                    }
+                    return player
+                })
             }
 
         default:
