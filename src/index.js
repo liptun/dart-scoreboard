@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
+import { addPlayer } from './actions/player'
+
+import './styles/reset.scss'
 
 import Router from './Router'
-
 import configureStore from './store'
 const store = configureStore()
+
+
+store.dispatch(addPlayer({name: 'LiptuN'}))
+store.dispatch(addPlayer())
+store.dispatch(addPlayer({name: 'Zivcio'}))
+
+console.log('store', store.getState())
 
 const jsx = (
   <Provider store={store}>

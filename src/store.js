@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux'
-import playersReducer from './reducers/players'
+import playerReducer from './reducers/player'
 
 export default () => {
     const store = createStore(
         combineReducers({
-            player: playersReducer
+            playerList: playerReducer
         }),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
