@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PlayerList from './PlayerList'
 import PlayerForm from './PlayerForm'
 import GameCustomize from './GameCustomize'
-import { startGame } from '../actions/game'
+import { startGame } from '../actions'
 import '../styles/new-game-page.scss'
 
 const NewGamePage = (props) => {

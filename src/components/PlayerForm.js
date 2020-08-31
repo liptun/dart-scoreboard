@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { addPlayer } from '../actions/game'
+import { addPlayer } from '../actions'
 
 const PlayerForm = (props) => {
     const [playerName, setPlayerName] = useState('')

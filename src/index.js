@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import { addPlayer } from './actions/game'
+import { addPlayer } from './actions'
 
 import './styles/reset.scss'
 
