@@ -1,14 +1,15 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import NotFoundPage from './components/NotFoundPage'
-import PlayerForm from './components/PlayerForm'
+import NewGameSetup from './components/NewGameSetup'
 
 const Router = () => (
     <BrowserRouter>
         <div>
             <Switch>
-                <Route path="/" component={PlayerForm} exact={true} />
-                <Route path="/create" component={NotFoundPage} />
+                <Route path="/" component={NotFoundPage} exact={true} />
+                <Route path="/game" component={NotFoundPage} exact={true} />
+                <Route path="/setup" component={NewGameSetup} />
                 <Route component={NotFoundPage} />
             </Switch>
         </div>
