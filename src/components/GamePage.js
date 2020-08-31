@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PlayerList from './PlayerList'
 
-const GamePage = (props) => {
+const GamePage = () => {
     return (
         <div>
             <h1>Game</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius doloremque assumenda ex magni explicabo cumque repellendus nesciunt architecto fugiat, quia dolor rerum accusantium, ea dolore excepturi repudiandae id! Iure, perferendis.</p>
+            <PlayerList readonly={true} />
         </div>
     )
 }

@@ -4,16 +4,21 @@ import { removePlayer } from '../actions/player'
 
 const PlayerListItem = (props) => {
 
-    const onPlayerRemove = (id) => {
+    const onRemovePlayer = (id) => {
         props.dispatch(removePlayer({id}))
     }
 
     return (
         <div className="player-list__item">
             <p>{props.player.name}</p>
-            <button onClick={() => onPlayerRemove(props.player.id)}>&times;</button>
+            {!props.readonly && (
+                <button onClick={() => onRemovePlayer(props.player.id)}>&times;</button>
+            )}
         </div>
     )
+}
+PlayerListItem.defaultProps = {
+    readonly: false
 }
 
 export default connect()(PlayerListItem)
