@@ -1,12 +1,14 @@
 import { v4 as uuid } from 'uuid'
 
 export const addPlayer = ({
-    name = 'Annonymous'
+    name = 'Annonymous',
+    score = [21,37]
 } = {}) => ({
     type: 'ADD_PLAYER',
     player: {
         id: uuid(),
-        name
+        name,
+        score
     }
 })
 

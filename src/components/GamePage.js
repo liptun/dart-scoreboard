@@ -1,17 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import PlayerList from './PlayerList'
+import Scoreboard from './Scoreboard'
+import EnterScore from './EnterScore'
 
-const GamePage = () => {
+import '../styles/game-page.scss'
+
+const GamePage = (props) => {
     return (
-        <div>
-            <h1>Game</h1>
-            <PlayerList readonly={true} />
+        <div className="game-page">
+            <h1>Game {props.game.gameType}</h1>
+            <EnterScore />
+            <Scoreboard />
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    playerList: state.playerList
+    playerList: state.playerList,
+    game: state.game
 })
 export default connect(mapStateToProps)(GamePage)

@@ -1,0 +1,28 @@
+.scoreboard {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1vw;
+    &__player {
+        display: grid;
+        grid-gap: 1vw;
+        position: relative;
+        text-align: center;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -.5vw;
+            width: 1px;
+            background-color: gray;
+        }
+        &__name {
+            font-weight: 700;
+        }
+        &__points {
+            display: grid;
+            grid-gap: 1vw;
+        }
+    }
+}
