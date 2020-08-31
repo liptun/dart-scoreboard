@@ -18,6 +18,14 @@ export const endGame = () => ({
     type: 'END_GAME'
 })
 
+export const nextPlayer = () => ({
+    type: 'NEXT_PLAYER'
+})
+
+export const prevPlayer = () => ({
+    type: 'PREV_PLAYER'
+})
+
 export const addPlayer = ({
     name = 'Annonymous',
     score = []

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import dartHit from '../libs/dartHit'
-import { enterScore } from '../actions'
+import { enterScore, nextPlayer } from '../actions'
 
 import '../styles/enter-score.scss'
 
@@ -13,6 +13,7 @@ const EnterScore = (props) => {
         e.preventDefault()
         if ( score.trim() ) {
             props.dispatch(enterScore({score}))
+            props.dispatch(nextPlayer())
             setScore('')
         }
     }

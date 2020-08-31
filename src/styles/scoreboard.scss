@@ -2,11 +2,13 @@
     display: grid;
     grid-auto-flow: column;
     grid-gap: 1vw;
+    align-items: flex-start;
     &__player {
         display: grid;
         grid-gap: 1vw;
         position: relative;
         text-align: center;
+        align-items: flex-start;
         &:after {
             content: '';
             display: block;
@@ -23,6 +25,9 @@
         &__points {
             display: grid;
             grid-gap: 1vw;
+        }
+        &__summary {
+            font-weight: 700;
         }
     }
 }
