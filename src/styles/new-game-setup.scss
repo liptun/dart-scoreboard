@@ -1,0 +1,12 @@
+.new-game-setup {
+    display: grid;
+    justify-content: center;
+    > h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+    .button-start-game {
+        margin: 2vw;
+        font-size: 1.4em;
+    }
+}

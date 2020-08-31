@@ -23,6 +23,4 @@ const PlayerForm = (props) => {
     )
 }
 
-const mapStateToProps = () => ({})
-
-export default connect(mapStateToProps)(PlayerForm)
+export default connect()(PlayerForm)
