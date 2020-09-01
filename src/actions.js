@@ -1,11 +1,11 @@
 import { v4 as uuid } from 'uuid'
 
-export const enterScore = ({score = ''}) => ({
+export const enterScore = ({score = ''} = {}) => ({
     type: 'ENTER_SCORE',
     score
 })
 
-export const setGameType = ({gameType = 301}) => ({
+export const setGameType = ({gameType = 301} = {}) => ({
     type: 'SET_GAME_TYPE',
     gameType
 })
@@ -38,7 +38,7 @@ export const addPlayer = ({
     }
 })
 
-export const removePlayer = ({id}) => ({
+export const removePlayer = ({id} = {}) => ({
     type: 'REMOVE_PLAYER',
     id
 })

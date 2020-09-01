@@ -12,10 +12,7 @@ export default (state = gameReducerDefaultState, action) => {
         case 'ADD_PLAYER':
             return {
                 ...state,
-                players: [
-                    ...state.players,
-                    action.player
-                ]
+                players: state.players.concat(action.player)
             }
 
         case 'REMOVE_PLAYER':
@@ -54,29 +51,22 @@ export default (state = gameReducerDefaultState, action) => {
 
         case 'PREV_PLAYER': {
             const playersCount = state.players.length
-            const prevPlayerIndex = state.currentPlayerIndex - 1 < 0 ? state.currentPlayerIndex - 1 : playersCount - 1
+            const prevPlayerIndex = state.currentPlayerIndex - 1 >= 0 ? state.currentPlayerIndex - 1 : playersCount - 1
             return {
                 ...state,
                 currentPlayerIndex: prevPlayerIndex
             }
         }
 
-        case 'ENTER_SCORE':
+        case 'ENTER_SCORE': {
+            const updatedPlayers = state.players
+            const score = dartHit(action.score)
+            updatedPlayers[state.currentPlayerIndex].score.push(score)
             return {
                 ...state,
-                players: state.players.map((player, index) => {
-                    if ( index === state.currentPlayerIndex ) {
-                        return {
-                            ...player,
-                            score: [
-                                ...player.score,
-                                dartHit(action.score)
-                            ]
-                        }
-                    }
-                    return player
-                })
+                players: updatedPlayers
             }
+        }
 
         default:
             return state
