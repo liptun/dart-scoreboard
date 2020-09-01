@@ -3,7 +3,7 @@ import dartHit from './libs/dartHit'
 const gameReducerDefaultState = {
     gameType: 301,
     gameRunning: false,
-    currentPlayer: 0,
+    currentPlayerIndex: 0,
     players: []
 }
 
@@ -33,7 +33,7 @@ export default (state = gameReducerDefaultState, action) => {
         case 'START_GAME':
             return {
                 ...state,
-                currentPlayer: 0,
+                currentPlayerIndex: 0,
                 gameRunning: true
             }
 
@@ -43,24 +43,29 @@ export default (state = gameReducerDefaultState, action) => {
                 gameRunning: false
             }
 
-        case 'NEXT_PLAYER':
+        case 'NEXT_PLAYER': {
             const playersCount = state.players.length
-            const nextPlayerIndex = state.currentPlayer + 1 < playersCount ? state.currentPlayer + 1 : 0
+            const nextPlayerIndex = state.currentPlayerIndex + 1 < playersCount ? state.currentPlayerIndex + 1 : 0
             return {
                 ...state,
-                currentPlayer: nextPlayerIndex
+                currentPlayerIndex: nextPlayerIndex
             }
+        }
 
-        case 'PREV_PLAYER':
+        case 'PREV_PLAYER': {
+            const playersCount = state.players.length
+            const prevPlayerIndex = state.currentPlayerIndex - 1 < 0 ? state.currentPlayerIndex - 1 : playersCount - 1
             return {
-                ...state
+                ...state,
+                currentPlayerIndex: prevPlayerIndex
             }
+        }
 
         case 'ENTER_SCORE':
             return {
                 ...state,
                 players: state.players.map((player, index) => {
-                    if ( index === state.currentPlayer ) {
+                    if ( index === state.currentPlayerIndex ) {
                         return {
                             ...player,
                             score: [

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 const GameStatus = (props) => {
     return (
         <div className="game-status">
-            <p>Current player: {props.game.players[props.game.currentPlayer].name}</p>
+            <p>Current player: {props.game.players[props.game.currentPlayerIndex].name}</p>
         </div>
     )
 }
