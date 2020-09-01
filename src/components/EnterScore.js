@@ -12,8 +12,20 @@ const EnterScore = (props) => {
     const onScoreSubmit = (e) => {
         e.preventDefault()
         if ( score.trim() ) {
-            props.dispatch(enterScore({score}))
-            props.dispatch(nextPlayer())
+            const currentPlayerScore = props.game.players[props.game.currentPlayerIndex].score.reduce((a, b) => a + b, 0)
+            const scoreToWin = props.game.gameType - currentPlayerScore
+            const newHit = dartHit(score)
+            if ( scoreToWin - newHit > 0 ) {
+                props.dispatch(enterScore({score: newHit}))
+                props.dispatch(nextPlayer())
+            } else if ( scoreToWin - newHit === 0 ) {
+                props.dispatch(enterScore({score: newHit}))
+                console.log('Player won game')
+                // TODO: Dispatch set game winner
+            } else {
+                props.dispatch(enterScore({score: 0}))
+                props.dispatch(nextPlayer())
+            }
             setScore('')
         }
     }

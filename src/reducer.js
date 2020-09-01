@@ -1,5 +1,3 @@
-import dartHit from './libs/dartHit'
-
 const gameReducerDefaultState = {
     gameType: 301,
     gameRunning: false,
@@ -60,8 +58,7 @@ export default (state = gameReducerDefaultState, action) => {
 
         case 'ENTER_SCORE': {
             const updatedPlayers = state.players
-            const score = dartHit(action.score)
-            updatedPlayers[state.currentPlayerIndex].score.push(score)
+            updatedPlayers[state.currentPlayerIndex].score.push(action.score)
             return {
                 ...state,
                 players: updatedPlayers

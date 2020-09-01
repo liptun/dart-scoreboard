@@ -86,6 +86,6 @@ test('Enter score', () => {
         players: [player1, player2],
         currentPlayerIndex: 0
     }
-    const state = gameReducer(defaultState, enterScore({score: 't20'}))
+    const state = gameReducer(defaultState, enterScore({score: 60}))
     expect(state.players[0].score).toEqual([60])
 })
