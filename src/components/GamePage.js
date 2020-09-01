@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Scoreboard from './Scoreboard'
 import EnterScore from './EnterScore'
-
+import GameStatus from './GameStatus'
 import '../styles/game-page.scss'
 
 const GamePage = (props) => {
@@ -16,6 +16,7 @@ const GamePage = (props) => {
     return (
         <div className="game-page">
             <h1>Game {props.game.gameType}</h1>
+            <GameStatus />
             <EnterScore />
             <Scoreboard />
         </div>

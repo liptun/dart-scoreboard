@@ -6,14 +6,14 @@ import GamePage from './components/GamePage'
 
 const Router = () => (
     <BrowserRouter>
-        <div>
+        <React.Fragment>
             <Switch>
                 <Route path="/" component={NewGamePage} exact={true} />
                 <Route path="/game" component={GamePage} exact={true} />
                 <Route path="/setup" component={NewGamePage} />
                 <Route component={NotFoundPage} />
             </Switch>
-        </div>
+        </React.Fragment>
     </BrowserRouter>
 )
 export default Router
