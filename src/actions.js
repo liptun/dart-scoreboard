@@ -1,6 +1,25 @@
 import { v4 as uuid } from 'uuid'
 
-export const enterScore = ({score = ''} = {}) => ({
+export const playerHit = ({score = 0} = {}) => {
+    return (dispatch, getState) => {
+        const state = getState()
+        const currentPlayerScore = state.game.players[state.game.currentPlayerIndex].score.reduce((a, b) => a + b, 0)
+        const scoreToWin = state.game.gameType - currentPlayerScore
+        if ( scoreToWin - score > 0 ) {
+            dispatch(enterScore({score}))
+            dispatch(nextPlayer())
+        } else if ( scoreToWin - score === 0 ) {
+            dispatch(enterScore({score}))
+            console.log('Player won game')
+            // TODO: Dispatch set game winner
+        } else {
+            dispatch(enterScore())
+            dispatch(nextPlayer())
+        }
+    }
+}
+
+export const enterScore = ({score = 0} = {}) => ({
     type: 'ENTER_SCORE',
     score
 })
