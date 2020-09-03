@@ -1,9 +1,14 @@
 export default (inputString = '') => {
-    const hitsBuffer = inputString.split(' ').join('').split(/[+;, ]/)
-    const hits = hitsBuffer.map(el => {
+    const hitsBuffer = inputString
+        .split(' ')
+        .join('')
+        .split(/[+;, ]/)
+    const hits = hitsBuffer.map((el) => {
         if (Number.isNaN(parseInt(el))) {
             const hitBuffer = Array.from(el)
-            const multipler = hitBuffer.length ? hitBuffer.shift().toUpperCase() : 1
+            const multipler = hitBuffer.length
+                ? hitBuffer.shift().toUpperCase()
+                : 1
             const hit = parseInt(hitBuffer.join(''))
             if (Number.isNaN(hit)) {
                 return 0

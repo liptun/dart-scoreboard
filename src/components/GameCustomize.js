@@ -3,14 +3,16 @@ import { connect } from 'react-redux'
 import { setGameType } from '../actions'
 
 const GameCustomize = (props) => {
-
     const onChangeGameType = (gameType) => {
-        props.dispatch(setGameType({gameType}))
+        props.dispatch(setGameType({ gameType }))
     }
 
     return (
         <div className="game-customize">
-            <select value={props.game.gameType} onChange={(e) => onChangeGameType(e.target.value)}>
+            <select
+                value={props.game.gameType}
+                onChange={(e) => onChangeGameType(e.target.value)}
+            >
                 <option value={101}>101</option>
                 <option value={301}>301</option>
                 <option value={501}>501</option>
@@ -21,9 +23,8 @@ const GameCustomize = (props) => {
     )
 }
 
-
 const mapStateToProps = (state) => ({
-    game: state.game
+    game: state.game,
 })
 
 export default connect(mapStateToProps)(GameCustomize)

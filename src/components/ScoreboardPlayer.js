@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-
 const ScoreboardPlayer = (props) => {
     return (
         <div className="scoreboard__player">
@@ -14,15 +13,17 @@ const ScoreboardPlayer = (props) => {
                 ))}
             </div>
             <div className="scoreboard__player__summary">
-                <p>{props.game.gameType - props.player.score.reduce((a, b) => a + b, 0)}</p>
+                <p>
+                    {props.game.gameType -
+                        props.player.score.reduce((a, b) => a + b, 0)}
+                </p>
             </div>
         </div>
     )
 }
 
-
 const mapStateToProps = (state) => ({
-    game: state.game
+    game: state.game,
 })
 
 export default connect(mapStateToProps)(ScoreboardPlayer)

@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import Scoreboard from './Scoreboard'
 import EnterScore from './EnterScore'
 import GameStatus from './GameStatus'
+import GameControls from './GameControls'
 import '../styles/game-page.scss'
 
 const GamePage = (props) => {
-
     useEffect(() => {
         if (!props.game.gameRunning) {
             props.history.push('/')
@@ -17,13 +17,14 @@ const GamePage = (props) => {
         <div className="game-page">
             <h1>Game {props.game.gameType}</h1>
             <GameStatus />
-            <EnterScore />
+            <GameControls />
+            {!props.game.winner && <EnterScore />}
             <Scoreboard />
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    game: state.game
+    game: state.game,
 })
 export default connect(mapStateToProps)(GamePage)

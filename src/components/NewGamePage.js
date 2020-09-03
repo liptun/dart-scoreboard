@@ -7,7 +7,6 @@ import { startGame } from '../actions'
 import '../styles/new-game-page.scss'
 
 const NewGamePage = (props) => {
-
     const startNewGame = () => {
         props.history.push('/game')
         props.dispatch(startGame())
@@ -23,14 +22,15 @@ const NewGamePage = (props) => {
                 //disabled={!props.game.players.length}
                 className="button-start-game"
                 onClick={() => startNewGame()}
-            >Start game</button>
+            >
+                Start game
+            </button>
         </div>
     )
-
 }
 
 const mapStateToProps = (state) => ({
-    game: state.game
+    game: state.game,
 })
 
 export default connect(mapStateToProps)(NewGamePage)

@@ -2,7 +2,8 @@ const gameReducerDefaultState = {
     gameType: 301,
     gameRunning: false,
     currentPlayerIndex: 0,
-    players: []
+    winner: undefined,
+    players: [],
 }
 
 export default (state = gameReducerDefaultState, action) => {
@@ -10,49 +11,67 @@ export default (state = gameReducerDefaultState, action) => {
         case 'ADD_PLAYER':
             return {
                 ...state,
-                players: state.players.concat(action.player)
+                players: state.players.concat(action.player),
             }
 
         case 'REMOVE_PLAYER':
             return {
                 ...state,
-                players: state.players.filter( ({ id }) => id !== action.id )
+                players: state.players.filter(({ id }) => id !== action.id),
             }
 
         case 'SET_GAME_TYPE':
             return {
                 ...state,
-                gameType: action.gameType
+                gameType: action.gameType,
+            }
+
+        case 'SET_WINNER':
+            return {
+                ...state,
+                winner: state.players[state.currentPlayerIndex],
+            }
+
+        case 'CLEAR_WINNER':
+            return {
+                ...state,
+                winner: undefined,
             }
 
         case 'START_GAME':
             return {
                 ...state,
                 currentPlayerIndex: 0,
-                gameRunning: true
+                gameRunning: true,
             }
 
         case 'END_GAME':
             return {
                 ...state,
-                gameRunning: false
+                gameRunning: false,
             }
 
         case 'NEXT_PLAYER': {
             const playersCount = state.players.length
-            const nextPlayerIndex = state.currentPlayerIndex + 1 < playersCount ? state.currentPlayerIndex + 1 : 0
+            const nextPlayerIndex =
+                state.currentPlayerIndex + 1 < playersCount
+                    ? state.currentPlayerIndex + 1
+                    : 0
             return {
                 ...state,
-                currentPlayerIndex: nextPlayerIndex
+                currentPlayerIndex: nextPlayerIndex,
             }
         }
 
         case 'PREV_PLAYER': {
             const playersCount = state.players.length
-            const prevPlayerIndex = state.currentPlayerIndex - 1 >= 0 ? state.currentPlayerIndex - 1 : playersCount - 1
+            const prevPlayerIndex =
+                state.currentPlayerIndex - 1 >= 0
+                    ? state.currentPlayerIndex - 1
+                    : playersCount - 1
             return {
                 ...state,
-                currentPlayerIndex: prevPlayerIndex
+                currentPlayerIndex: prevPlayerIndex,
             }
         }
 
@@ -61,7 +80,7 @@ export default (state = gameReducerDefaultState, action) => {
             updatedPlayers[state.currentPlayerIndex].score.push(action.score)
             return {
                 ...state,
-                players: updatedPlayers
+                players: updatedPlayers,
             }
         }
 

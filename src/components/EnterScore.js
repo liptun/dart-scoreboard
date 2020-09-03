@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import dartHit from '../libs/dartHit'
-import { enterScore, nextPlayer, playerHit } from '../actions'
+import { playerHit } from '../actions'
+
+
+
 
 import '../styles/enter-score.scss'
 
 const EnterScore = (props) => {
-
-    const [score, setScore] = useState('')
+    const [score, setScore] = useState('' )
 
     const onScoreSubmit = (e) => {
         e.preventDefault()
-        if ( score.trim() ) {
+        if (score.trim()) {
             const newHit = dartHit(score)
-            props.dispatch(playerHit({score: newHit}))
+            props.dispatch(playerHit({ score: newHit }))
             setScore('')
         }
     }
@@ -21,7 +23,11 @@ const EnterScore = (props) => {
     return (
         <div className="enter-score">
             <form onSubmit={onScoreSubmit}>
-                <input type="text" value={score} onChange={(e) => setScore(e.target.value)} />
+                <input
+                    type="text"
+                    value={score}
+                    onChange={(e) => setScore(e.target.value)}
+                />
                 <button>Score</button>
             </form>
             <p>{dartHit(score)}</p>
@@ -30,6 +36,6 @@ const EnterScore = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    game: state.game
+    game: state.game,
 })
 export default connect(mapStateToProps)(EnterScore)

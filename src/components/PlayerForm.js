@@ -7,8 +7,8 @@ const PlayerForm = (props) => {
 
     const onFormSubmit = (e) => {
         e.preventDefault()
-        if ( playerName.trim() ) {
-            props.dispatch(addPlayer({name: playerName}))
+        if (playerName.trim()) {
+            props.dispatch(addPlayer({ name: playerName }))
             setPlayerName('')
         }
     }
@@ -16,7 +16,12 @@ const PlayerForm = (props) => {
     return (
         <div className="player-form">
             <form onSubmit={onFormSubmit}>
-                <input type="text" placeholder="Player name" value={playerName} onChange={(e) => setPlayerName(e.target.value)} />
+                <input
+                    type="text"
+                    placeholder="Player name"
+                    value={playerName}
+                    onChange={(e) => setPlayerName(e.target.value)}
+                />
                 <button>Add</button>
             </form>
         </div>
