@@ -14,7 +14,10 @@ const NewGamePage = (props) => {
 
     return (
         <div className="new-game-page">
-            <h1>Dart 101</h1>
+            <div className="brand">
+                <h1>Dart 101</h1>
+                <i className="ico ico-unicorn-solid" />
+            </div>
             <GameCustomize />
             <PlayerList />
             <PlayerForm />

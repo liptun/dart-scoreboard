@@ -65,8 +65,13 @@ button {
     &-cta {
         font-size: 2.6em;
         --size: 2em;
+        background-color: $color-white;
+        border-color: $color-white;
+        display: flex;
+        align-items: center;
         .ico {
-            font-size: 1.2em;
+            font-size: 0.8em;
+            margin-left: 1vw;
         }
     }
 }
