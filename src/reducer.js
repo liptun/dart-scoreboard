@@ -1,5 +1,5 @@
 const gameReducerDefaultState = {
-    gameType: 301,
+    gameType: 101,
     gameRunning: false,
     gameTurn: 0,
     currentPlayerIndex: 0,

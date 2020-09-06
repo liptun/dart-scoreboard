@@ -4,9 +4,23 @@
 
 @import './variables';
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba($color-primary, 0.2);
+}
+::-webkit-scrollbar-thumb {
+    background-color: $color-primary;
+}
+
 * {
     font-family: $font-primary;
     box-sizing: border-box;
+    &::selection {
+        background-color: $color-primary;
+        color: $color-white;
+    }
 }
 body {
     font-size: 1vw;
