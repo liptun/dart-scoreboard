@@ -26,6 +26,7 @@ const NewGamePage = (props) => {
             >
                 Start game
             </button>
+            <div className="myfonticon myfonticon-close"></div>
         </div>
     )
 }

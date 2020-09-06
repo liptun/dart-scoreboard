@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { endGame } from '../actions'
-import closeIcon from '../assets/close.svg'
 
 const GameControls = (props) => {
     const onClickUndo = () => {}
@@ -14,9 +13,7 @@ const GameControls = (props) => {
         <div>
             <button onClick={onClickUndo}>Undo</button>
             <button onClick={onClickReset}>Reset</button>
-            <button onClick={onClickEnd} className="btn-icon">
-                <img src={closeIcon} alt="close" />
-            </button>
+            <button onClick={onClickEnd}></button>
         </div>
     )
 }

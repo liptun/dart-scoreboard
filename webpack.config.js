@@ -63,6 +63,14 @@ module.exports = (env) => {
                     test: /\.html$/,
                     use: ['html-loader'],
                 },
+                {
+                    test: /\.font\.js/,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        'webfonts-loader',
+                    ],
+                },
             ],
         },
         devtool: isProduction ? 'source-map' : 'inline-source-map',

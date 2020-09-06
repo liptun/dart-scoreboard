@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { addPlayer } from './actions'
+import './myfont.font'
 
 import './styles/reset.scss'
 import './styles/main.scss'
