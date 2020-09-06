@@ -1,7 +1,9 @@
+@import './variables.scss';
+
 .scoreboard {
     display: grid;
     grid-auto-flow: column;
-    grid-gap: 1vw;
+    grid-gap: 4vw;
     align-items: flex-start;
     &__player {
         display: grid;
@@ -9,25 +11,20 @@
         position: relative;
         text-align: center;
         align-items: flex-start;
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: -0.5vw;
-            width: 1px;
-            background-color: gray;
-        }
         &__name {
             font-weight: 700;
+            font-size: 3.2em;
+            font-family: $font-special;
+            color: $color-white;
         }
         &__points {
             display: grid;
-            grid-gap: 1vw;
+            grid-gap: 0.3vw;
         }
         &__summary {
+            font-family: $font-secondary;
             font-weight: 700;
+            font-size: 4em;
         }
     }
 }
