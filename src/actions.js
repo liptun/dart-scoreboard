@@ -78,6 +78,10 @@ export const undoLastScore = () => ({
 
 export const undoLast = () => {
     return (dispatch, getState) => {
+        if (getState().game.winner) {
+            dispatch(clearWinner())
+            dispatch(nextPlayer())
+        }
         const gameTurns = getState().game.gameTurn
         if (gameTurns >= 1) {
             dispatch(prevPlayer())
