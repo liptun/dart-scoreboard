@@ -1,6 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { endGame, clearScore, startGame, undoLast } from '../actions'
+import {
+    endGame,
+    clearScore,
+    startGame,
+    undoLast,
+    clearWinner,
+} from '../actions'
 import '../styles/game-controls.scss'
 
 const GameControls = (props) => {
@@ -8,10 +14,12 @@ const GameControls = (props) => {
         props.dispatch(undoLast())
     }
     const onClickReset = () => {
+        props.dispatch(clearWinner())
         props.dispatch(clearScore())
         props.dispatch(startGame())
     }
     const onClickEnd = () => {
+        props.dispatch(clearWinner())
         props.dispatch(clearScore())
         props.dispatch(endGame())
     }
