@@ -1,10 +1,11 @@
+@import './variables.scss';
+
 .game-page {
     text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 3vw;
-    // justify-content: center;
     align-items: center;
     > h1 {
         text-align: center;

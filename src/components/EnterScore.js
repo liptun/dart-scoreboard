@@ -17,8 +17,9 @@ const EnterScore = (props) => {
         }
     }
 
+    const cssClass = props.game.winner ? 'enter-score disabled' : 'enter-score'
     return (
-        <div className="enter-score">
+        <div className={cssClass}>
             <form onSubmit={onScoreSubmit}>
                 <input
                     type="text"
@@ -30,7 +31,9 @@ const EnterScore = (props) => {
                     <i className="ico ico-enter"></i>
                 </button>
             </form>
-            <p>{dartHit(score)}</p>
+            <p>
+                Hit score: <span>{dartHit(score)}</span>
+            </p>
         </div>
     )
 }

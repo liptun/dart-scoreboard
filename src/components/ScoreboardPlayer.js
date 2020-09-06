@@ -2,8 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const ScoreboardPlayer = (props) => {
+    const cssClass =
+        props.game.winner && props.game.winner.id === props.player.id
+            ? 'scoreboard__player scoreboard--winner'
+            : 'scoreboard__player'
     return (
-        <div className="scoreboard__player">
+        <div className={cssClass}>
             <div className="scoreboard__player__name">
                 <p>{props.player.name}</p>
             </div>

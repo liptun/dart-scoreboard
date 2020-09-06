@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-const randomThtowsMessage = (playerName = 'Annonymous') => {
+const randomThrowMessage = (playerName = 'Annonymous') => {
     const variants = [
         <Fragment>
             <span className="player">{playerName} </span>
@@ -51,4 +51,4 @@ const randomThtowsMessage = (playerName = 'Annonymous') => {
     const randomIndex = Math.floor(Math.random() * variants.length)
     return variants[randomIndex]
 }
-export default randomThtowsMessage
+export default randomThrowMessage

@@ -1,13 +1,24 @@
 @import './variables.scss';
+
 .enter-score {
     display: grid;
-    grid-gap: 1vw;
+    // grid-gap: 1vw;
     justify-content: center;
     margin: 2vw 0;
+    height: 6vw;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    &.disabled {
+        height: 0;
+    }
     p {
         text-align: center;
         font-style: italic;
-        color: gray;
+        font-size: 1.4em;
+        span {
+            font-family: $font-special;
+            font-weight: 700;
+        }
     }
     form {
         display: grid;

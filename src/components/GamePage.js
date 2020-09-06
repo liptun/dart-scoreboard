@@ -18,7 +18,7 @@ const GamePage = (props) => {
             <h1>Game {props.game.gameType}</h1>
             <GameControls />
             <GameStatus />
-            {!props.game.winner && <EnterScore />}
+            <EnterScore />
             <Scoreboard />
         </div>
     )

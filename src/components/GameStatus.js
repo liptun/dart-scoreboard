@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import randomThrowsMessage from '../libs/randomThrowsMessage'
+import randomThrowMessage from '../libs/randomThrowMessage'
+import randomWinMessage from '../libs/randomWinMessage'
 
 import '../styles/game-status.scss'
 
@@ -10,12 +11,9 @@ const GameStatus = (props) => {
     return (
         <div className="game-status">
             {props.game.winner ? (
-                <p>
-                    {props.game.players[props.game.currentPlayerIndex].name}{' '}
-                    wins
-                </p>
+                <p>{randomWinMessage(playerName)}</p>
             ) : (
-                <p>{randomThrowsMessage(playerName)}</p>
+                <p>{randomThrowMessage(playerName)}</p>
             )}
         </div>
     )
