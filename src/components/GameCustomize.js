@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { setGameType } from '../actions'
 
+import '../styles/game-customize.scss'
+
 const GameCustomize = (props) => {
     const onChangeGameType = (gameType) => {
         props.dispatch(setGameType({ gameType }))

@@ -15,7 +15,6 @@ const NewGamePage = (props) => {
     return (
         <div className="new-game-page">
             <h1>Dart 101</h1>
-            <h2>New game</h2>
             <GameCustomize />
             <PlayerList />
             <PlayerForm />
@@ -24,7 +23,8 @@ const NewGamePage = (props) => {
                 className="btn btn-cta"
                 onClick={() => startNewGame()}
             >
-                Start game
+                <span>Start </span>
+                <i className="ico ico-target"></i>
             </button>
         </div>
     )
