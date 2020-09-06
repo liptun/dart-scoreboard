@@ -12,7 +12,7 @@ module.exports = (env) => {
             filename: 'main.[contentHash].js',
             path: isProduction
                 ? path.resolve(__dirname, 'dist')
-                : path.resolve(__dirname, 'public'),
+                : path.resolve(__dirname, 'dist'),
         },
         plugins: [
             new MiniCssExtractPlugin({
@@ -75,7 +75,7 @@ module.exports = (env) => {
         },
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
-            contentBase: path.join(__dirname, 'public'),
+            contentBase: path.join(__dirname, 'dist'),
             historyApiFallback: true,
         },
     }

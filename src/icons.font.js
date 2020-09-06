@@ -1,5 +1,5 @@
 module.exports = {
-    files: ['./test-svg/*.svg'],
+    files: ['./icons/*.svg'],
     fontName: 'myfonticons',
     classPrefix: 'myfonticon-',
     baseSelector: '.myfonticon',

@@ -27,6 +27,8 @@ const NewGamePage = (props) => {
                 Start game
             </button>
             <div className="myfonticon myfonticon-close"></div>
+            <div className="myfonticon myfonticon-back"></div>
+            <div className="myfonticon myfonticon-replay"></div>
         </div>
     )
 }
