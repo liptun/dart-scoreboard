@@ -1,17 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { endGame } from '../actions'
+import { endGame, clearScore, startGame, undoLast } from '../actions'
 import '../styles/game-controls.scss'
 
 const GameControls = (props) => {
-    const onClickUndo = () => {}
-    const onClickReset = () => {}
+    const onClickUndo = () => {
+        props.dispatch(undoLast())
+    }
+    const onClickReset = () => {
+        props.dispatch(clearScore())
+        props.dispatch(startGame())
+    }
     const onClickEnd = () => {
+        props.dispatch(clearScore())
         props.dispatch(endGame())
     }
 
     return (
-        <div class="game-controls">
+        <div className="game-controls">
             <button
                 onClick={onClickUndo}
                 className="btn btn-ico"

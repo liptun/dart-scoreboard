@@ -71,3 +71,17 @@ export const removePlayer = ({ id } = {}) => ({
     type: 'REMOVE_PLAYER',
     id,
 })
+
+export const undoLastScore = () => ({
+    type: 'UNDO_LAST_SCORE',
+})
+
+export const undoLast = () => {
+    return (dispatch, getState) => {
+        const gameTurns = getState().game.gameTurn
+        if (gameTurns >= 1) {
+            dispatch(prevPlayer())
+            dispatch(undoLastScore())
+        }
+    }
+}

@@ -1,6 +1,7 @@
 const gameReducerDefaultState = {
     gameType: 301,
     gameRunning: false,
+    gameTurn: 0,
     currentPlayerIndex: 0,
     winner: undefined,
     players: [],
@@ -42,6 +43,7 @@ export default (state = gameReducerDefaultState, action) => {
             return {
                 ...state,
                 currentPlayerIndex: 0,
+                gameTurn: 0,
                 gameRunning: true,
             }
 
@@ -78,6 +80,28 @@ export default (state = gameReducerDefaultState, action) => {
         case 'ENTER_SCORE': {
             const updatedPlayers = state.players
             updatedPlayers[state.currentPlayerIndex].score.push(action.score)
+            return {
+                ...state,
+                players: updatedPlayers,
+                gameTurn: state.gameTurn + 1,
+            }
+        }
+
+        case 'UNDO_LAST_SCORE': {
+            const updatedPlayers = state.players
+            updatedPlayers[state.currentPlayerIndex].score.pop()
+            return {
+                ...state,
+                players: updatedPlayers,
+                gameTurn: state.gameTurn - 1,
+            }
+        }
+
+        case 'CLEAR_SCORE': {
+            const updatedPlayers = state.players
+            updatedPlayers.forEach((player) => {
+                player.score = []
+            })
             return {
                 ...state,
                 players: updatedPlayers,
