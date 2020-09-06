@@ -16,8 +16,8 @@ const GamePage = (props) => {
     return (
         <div className="game-page">
             <h1>Game {props.game.gameType}</h1>
-            <GameStatus />
             <GameControls />
+            <GameStatus />
             {!props.game.winner && <EnterScore />}
             <Scoreboard />
         </div>

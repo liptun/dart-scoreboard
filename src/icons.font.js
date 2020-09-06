@@ -1,8 +1,8 @@
 module.exports = {
     files: ['./icons/*.svg'],
-    fontName: 'myfonticons',
-    classPrefix: 'myfonticon-',
-    baseSelector: '.myfonticon',
+    fontName: 'icons',
+    classPrefix: 'ico-',
+    baseSelector: '.ico',
     types: ['eot', 'woff', 'woff2', 'ttf', 'svg'],
     fixedWidth: true,
     fileName: 'font.[fontname].[chunkhash].[ext]',

@@ -14,29 +14,54 @@ body {
     color: $color-white;
 }
 
-select {
+.btn,
+select,
+input,
+button {
+    background: none;
     border: 2px solid $color-secondary;
-    background-color: $color-secondary;
     color: $color-background;
     font-size: 2em;
     border-radius: 2vw;
     padding: 0.1vw 1.2vw;
+    &:focus {
+        outline: 0;
+    }
 }
-
-.btn-icon {
-    border: none;
-    background: none;
+input {
+    color: $color-white;
+    &::placeholder {
+        color: $color-secondary;
+    }
+}
+.btn,
+select,
+button {
+    cursor: pointer;
+}
+.btn,
+select,
+button {
+    background-color: $color-secondary;
+    &:hover {
+        background-color: $color-white;
+        border-color: $color-white;
+    }
 }
 
 .btn {
-    border: 2px solid $color-secondary;
-    background-color: $color-secondary;
-    color: $color-background;
-    font-size: 2em;
-    border-radius: 2vw;
-    padding: 0.1vw 1.2vw;
-    cursor: pointer;
     &-cta {
         font-size: 2.6em;
+    }
+    &-ico {
+        border-radius: 50%;
+        --size: 1em;
+        width: var(--size);
+        height: var(--size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1vw;
+        font-size: 1em;
     }
 }

@@ -1,7 +1,12 @@
 .game-page {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     > h1 {
         text-align: center;
-        font-size: 2em;
-        margin-bottom: 2vw;
+        font-size: 3em;
     }
 }

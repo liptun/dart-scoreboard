@@ -3,13 +3,10 @@ import { connect } from 'react-redux'
 import dartHit from '../libs/dartHit'
 import { playerHit } from '../actions'
 
-
-
-
 import '../styles/enter-score.scss'
 
 const EnterScore = (props) => {
-    const [score, setScore] = useState('' )
+    const [score, setScore] = useState('')
 
     const onScoreSubmit = (e) => {
         e.preventDefault()
@@ -27,8 +24,11 @@ const EnterScore = (props) => {
                     type="text"
                     value={score}
                     onChange={(e) => setScore(e.target.value)}
+                    placeholder="Enter score"
                 />
-                <button>Score</button>
+                <button className="btn-ico">
+                    <i className="ico ico-enter"></i>
+                </button>
             </form>
             <p>{dartHit(score)}</p>
         </div>
