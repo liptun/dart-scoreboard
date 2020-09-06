@@ -19,7 +19,7 @@ const NewGamePage = (props) => {
             <PlayerList />
             <PlayerForm />
             <button
-                //disabled={!props.game.players.length}
+                disabled={!props.game.players.length}
                 className="btn btn-cta"
                 onClick={() => startNewGame()}
             >

@@ -7,7 +7,9 @@ import '../styles/game-status.scss'
 
 const GameStatus = (props) => {
     const playerIndex = props.game.currentPlayerIndex
-    const { name: playerName } = props.game.players[playerIndex]
+    const { name: playerName = 'Annonymous' } = props.game.players[playerIndex]
+        ? props.game.players[playerIndex]
+        : {}
     return (
         <div className="game-status">
             {props.game.winner ? (

@@ -8,6 +8,7 @@ import '../styles/game-page.scss'
 
 const GamePage = (props) => {
     useEffect(() => {
+        console.log('props.game.gameRunning', props.game.gameRunning)
         if (!props.game.gameRunning) {
             props.history.push('/')
         }
