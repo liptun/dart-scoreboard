@@ -14,13 +14,14 @@ const NewGamePage = (props) => {
 
     return (
         <div className="new-game-page">
+            <h1>Dart 101</h1>
             <h2>New game</h2>
             <GameCustomize />
             <PlayerList />
             <PlayerForm />
             <button
                 //disabled={!props.game.players.length}
-                className="button-start-game"
+                className="btn btn-cta"
                 onClick={() => startNewGame()}
             >
                 Start game

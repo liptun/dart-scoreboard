@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { addPlayer } from './actions'
 
 import './styles/reset.scss'
+import './styles/main.scss'
 
 import Router from './Router'
 import configureStore from './store'

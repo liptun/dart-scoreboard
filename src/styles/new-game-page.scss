@@ -1,9 +1,18 @@
+@import './variables';
 .new-game-page {
-    display: grid;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    > h1 {
+        font-size: 7em;
+        color: $color-secondary;
+    }
     > h2 {
         font-size: 2em;
-        text-align: center;
+        color: $color-white;
     }
     .button-start-game {
         margin: 2vw;
