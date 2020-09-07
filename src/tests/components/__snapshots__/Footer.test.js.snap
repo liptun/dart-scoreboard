@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Footer component 1`] = `
+<footer
+  className="footer"
+>
+  <p>
+    Developed by
+     
+    <a
+      href="https://github.com/liptun"
+      target="_blank"
+    >
+      LiptuN
+    </a>
+  </p>
+</footer>
+`;

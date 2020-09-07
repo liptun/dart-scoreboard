@@ -1,4 +1,4 @@
-import dartHit from '../libs/dartHit'
+import dartHit from '../../libs/dartHit'
 
 test('dartHit score calculation', () => {
     expect(dartHit()).toEqual(0)
