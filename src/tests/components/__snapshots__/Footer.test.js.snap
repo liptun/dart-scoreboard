@@ -11,7 +11,7 @@ exports[`Render Footer component 1`] = `
       href="https://github.com/liptun"
       target="_blank"
     >
-      LiptuN
+      Rafał Karczmarzyk aka LiptuN
     </a>
   </p>
 </footer>

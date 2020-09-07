@@ -7,7 +7,7 @@ const Footer = () => (
         <p>
             Developed by{' '}
             <a href="https://github.com/liptun" target="_blank">
-                LiptuN
+                Rafał Karczmarzyk aka LiptuN
             </a>
         </p>
     </footer>
