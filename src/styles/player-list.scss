@@ -4,6 +4,10 @@
     margin: 2vw 0 1vw;
     &__title {
         color: $color-white;
+        .info {
+            color: $color-secondary;
+            font-size: 0.8em;
+        }
     }
     &__item {
         display: flex;

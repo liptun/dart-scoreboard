@@ -6,14 +6,14 @@ import '../styles/player-form.scss'
 
 const PlayerForm = (props) => {
     const [playerName, setPlayerName] = useState(
-        `Player ${props.game.players.length + 1}`
+        `Player ${props.players.length + 1}`
     )
 
     const onFormSubmit = (e) => {
         e.preventDefault()
         if (playerName.trim()) {
             props.dispatch(addPlayer({ name: playerName }))
-            setPlayerName(`Player ${props.game.players.length + 2}`)
+            setPlayerName(`Player ${props.players.length + 2}`)
         }
     }
 
@@ -27,13 +27,17 @@ const PlayerForm = (props) => {
                     onChange={(e) => setPlayerName(e.target.value)}
                     onFocus={(e) => e.target.select()}
                 />
-                <button disabled={props.game.players.length >= 6}>Add</button>
+                <button disabled={props.players.length >= 6}>Add</button>
             </form>
         </div>
     )
 }
+PlayerForm.defaultProps = {
+    players: [],
+}
+export { PlayerForm }
 
 const mapStateToProps = (state) => ({
-    game: state.game,
+    players: state.game.players,
 })
 export default connect(mapStateToProps)(PlayerForm)

@@ -7,9 +7,12 @@ const PlayerList = (props) => {
     return (
         <div className="player-list">
             <div className="player-list__title">
-                <p>Players ({props.game.players.length})</p>
+                <p>Players ({props.players.length})</p>
+                {props.players.length === 0 && (
+                    <p className="info">At least one player is required</p>
+                )}
             </div>
-            {props.game.players.map((player) => (
+            {props.players.map((player) => (
                 <PlayerListItem
                     readonly={props.readonly}
                     key={player.id}
@@ -22,8 +25,9 @@ const PlayerList = (props) => {
 PlayerList.defaultProps = {
     readonly: false,
 }
+export { PlayerList }
 
 const mapStateToProps = (state) => ({
-    game: state.game,
+    players: state.game.players,
 })
 export default connect(mapStateToProps)(PlayerList)
