@@ -1,7 +1,16 @@
 @import './variables';
+@import './mixins';
+
 .game-status {
     font-size: 5em;
     font-family: $font-secondary;
+    @include mobile {
+        font-size: 3.6em;
+        min-height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     span.player {
         color: $color-primary;
     }
