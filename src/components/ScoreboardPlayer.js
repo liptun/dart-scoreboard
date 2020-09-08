@@ -6,6 +6,9 @@ const ScoreboardPlayer = (props) => {
         props.game.winner && props.game.winner.id === props.player.id
             ? 'scoreboard__player scoreboard--winner'
             : 'scoreboard__player'
+    const playerScore = props.player.score.reduce((a, b) => a + b, 0)
+    const pointsToWin = props.game.gameType - playerScore
+
     return (
         <div className={cssClass}>
             <div className="scoreboard__player__name">
@@ -13,8 +16,8 @@ const ScoreboardPlayer = (props) => {
             </div>
             <div className="scoreboard__player__summary">
                 <p>
-                    {props.game.gameType -
-                        props.player.score.reduce((a, b) => a + b, 0)}
+                    {pointsToWin}
+                    {pointsToWin === 69 && <span>hehe</span>}
                 </p>
             </div>
             <div className="scoreboard__player__points">
