@@ -8,3 +8,7 @@ Tech stack:
 
 -   React
 -   Redux
+
+Testing
+
+-   Jest
