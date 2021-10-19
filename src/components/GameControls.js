@@ -7,6 +7,9 @@ import {
     undoLast,
     clearWinner,
 } from '../actions'
+import Back from '../icons/Back'
+import Close from '../icons/Close'
+import Replay from '../icons/Replay'
 import '../styles/game-controls.scss'
 
 const GameControls = (props) => {
@@ -31,21 +34,21 @@ const GameControls = (props) => {
                 className="btn btn-ico"
                 title="Undo last move"
             >
-                <i className="ico ico-back"></i>
+                <Back />
             </button>
             <button
                 onClick={onClickReset}
                 className="btn btn-ico"
                 title="Reset game"
             >
-                <i className="ico ico-replay"></i>
+                <Replay />
             </button>
             <button
                 onClick={onClickEnd}
                 className="btn btn-ico"
                 title="End game"
             >
-                <i className="ico ico-close"></i>
+                <Close />
             </button>
         </div>
     )

@@ -4,6 +4,7 @@ import dartHit from '../libs/dartHit'
 import { playerHit } from '../actions'
 
 import '../styles/enter-score.scss'
+import Enter from '../icons/Enter'
 
 const EnterScore = (props) => {
     const [score, setScore] = useState('')
@@ -28,7 +29,7 @@ const EnterScore = (props) => {
                     placeholder="Enter score"
                 />
                 <button className="btn-ico">
-                    <i className="ico ico-enter"></i>
+                    <Enter />
                 </button>
             </form>
             <p>

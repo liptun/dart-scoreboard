@@ -5,6 +5,8 @@ import PlayerForm from './PlayerForm'
 import GameCustomize from './GameCustomize'
 import { startGame } from '../actions'
 import '../styles/new-game-page.scss'
+import Target from '../icons/Target'
+import UnicornSolid from '../icons/UnicornSolid'
 
 const NewGamePage = (props) => {
     const startNewGame = () => {
@@ -16,7 +18,7 @@ const NewGamePage = (props) => {
         <div className="new-game-page">
             <div className="brand">
                 <h1>Dart 101</h1>
-                <i className="ico ico-unicorn-solid" />
+                <UnicornSolid />
             </div>
             <GameCustomize />
             <PlayerList />
@@ -27,7 +29,7 @@ const NewGamePage = (props) => {
                 onClick={() => startNewGame()}
             >
                 <span>Start </span>
-                <i className="ico ico-target"></i>
+                <Target />
             </button>
         </div>
     )

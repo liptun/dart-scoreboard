@@ -90,8 +90,7 @@ button {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1vw;
-        font-size: 1em;
+        padding: 0.3vw;
         @include mobile {
             --size: 2em;
         }
@@ -103,9 +102,14 @@ button {
         border-color: $color-white;
         display: flex;
         align-items: center;
-        .ico {
+        svg {
             font-size: 0.8em;
             margin-left: 1vw;
         }
+    }
+
+    svg {
+        width: 1em;
+        height: 1em;
     }
 }
