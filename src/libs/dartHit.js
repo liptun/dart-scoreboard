@@ -1,4 +1,4 @@
-export default (inputString = '') => {
+const dartHit = (inputString = '') => {
     const hitsBuffer = inputString
         .split(' ')
         .join('')
@@ -32,3 +32,5 @@ export default (inputString = '') => {
         }
     })
 }
+
+export default dartHit

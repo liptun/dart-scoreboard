@@ -4,7 +4,7 @@ import gameReducer from './reducer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export default () => {
+const store = () => {
     const store = createStore(
         combineReducers({
             game: gameReducer,
@@ -14,3 +14,5 @@ export default () => {
 
     return store
 }
+
+export default store

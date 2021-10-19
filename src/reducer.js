@@ -7,7 +7,7 @@ const gameReducerDefaultState = {
     players: [],
 }
 
-export default (state = gameReducerDefaultState, action) => {
+const reducer = (state = gameReducerDefaultState, action) => {
     switch (action.type) {
         case 'ADD_PLAYER':
             return {
@@ -112,3 +112,5 @@ export default (state = gameReducerDefaultState, action) => {
             return state
     }
 }
+
+export default reducer
